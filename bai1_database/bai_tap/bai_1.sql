@@ -25,4 +25,10 @@ update class
 set height = 5
 where id = 1 or id = 2;
 
-SELECT * FROM class;
+
+create table teacher(
+id int primary key,
+`name` varchar(50),
+age int,
+country varchar(50)
+);
