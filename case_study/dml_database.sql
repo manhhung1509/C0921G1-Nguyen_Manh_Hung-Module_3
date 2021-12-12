@@ -152,4 +152,17 @@ left join detail_contract on contract.contract_code = detail_contract.contract_c
 left join accompanied_service on accompanied_service.Accompanied_service_code = detail_contract.Accompanied_service_code
 group by contract_code
 order by customer_code asc, contract_code desc;
+
+/* task_6. Hiển thị ma_dich_vu, ten_dich_vu, dien_tich, chi_phi_thue, ten_loai_dich_vu của tất cả các loại dịch vụ chưa từng được 
+           khách hàng thực hiện đặt từ quý 1 của năm 2021 (Quý 1 là tháng 1, 2, 3).*/
+select service.service_code, service.service_name, service.area, service.rental_costs, service_type.service_type_name
+from service
+join service_type on service.service_type_code = service_type.service_type_code
+where service.service_code not in (
+select service.service_code
+from service
+join service_type on service.service_type_code = service_type.service_type_code
+join contract on service.service_code = contract.service_code
+where contract.date_do_contract between '2021/1/1' and '2021/3/30'
+);
  
