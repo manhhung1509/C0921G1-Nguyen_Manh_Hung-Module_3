@@ -1,28 +1,26 @@
--- task_1
-
+-- task_1:
 use case_study;
 
- insert into vi_tri
+ insert into `position`
  values
  (1,'quản lý'),
  (2,'nhân viên');
  
- 
- insert into trinh_do
+ insert into `level`
  values
 (1,'Trung Cấp'),
 (2,'Cao Đẳng'),
 (3,'Đại Học'),
 (4,'Sau Đại Học');
 
-insert into bo_phan
+insert into department
  values
  (1,'Sale-Marketing'),	
 (2,'Hành chính'),	
 (3,'Phục vụ'),	
 (4,'Quản lý');
 
-insert into nhan_vien
+insert into employee
 values 
 (1,'Nguyễn Văn An','1970-11-07','456231786','10000000','0901234121','annguyen@gmail.com','295 Nguyễn Tất Thành, Đà Nẵng',1,3,1),	
 (2,'Lê Văn Bình','1997-04-09','654231234','7000000','0934212314','binhlv@gmail.com','22 Yên Bái, Đà Nẵng',1,2,2),	
@@ -35,7 +33,7 @@ values
 (9,'Tòng Hoang','1982-09-03','256781231','6000000','0245144444','hoangtong@gmail.com','213 Hàm Nghi, Đà Nẵng',2,4,4),	
 (10,'Nguyễn Công Đạo','1994-01-08','755434343','8000000','0988767111','nguyencongdao12@gmail.com','6 Hoà Khánh, Đồng Nai',2,3,2);					
 				
-insert into loai_khach
+insert into custommer_type
 values
 (1,'Diamond'),	
 (2,'Platinium'),	
@@ -43,7 +41,7 @@ values
 (4,'Silver'),	
 (5,'Member');
 
-insert into khach_hang
+insert into customer
 values
 (1,'Nguyễn Thị Hào','1970-11-07',b'0','643431213','0945423362','thihao07@gmail.com','23 Nguyễn Hoàng, Đà Nẵng',5),
 (2,'Phạm Xuân Diệu','1992-08-08',b'1','865342123','0954333333','xuandieu92@gmail.com','K77/22 Thái Phiên, Quảng Trị',3),
@@ -56,20 +54,20 @@ values
 (9,'Trần Đại Danh','1994-07-01',b'1','432341235','0643343433','danhhai99@gmail.com','24 Lý Thường Kiệt, Quảng Ngãi',1),	
 (10,'Nguyễn Tâm Đắc','1989-07-01',b'1','344343432','0987654321','dactam@gmail.com','22 Ngô Quyền, Đà Nẵng',2);
 
-insert into kieu_thue
+insert into rental_type
 values
 (1,'year'),	
 (2,'month'),	
 (3,'day'),	
 (4,'hour');
 
-insert into loai_dich_vu
+insert into service_type
 values
 (1,'Villa'),	
 (2,'House'),	
 (3,'Room');
 
-insert into dich_vu
+insert into service
 values
 (1,'Villa Beach Front',25000,10000000,'10','vip','Có hồ bơi','500',4,3,1),
 (2,'House Princess 01',14000,5000000,'7','vip','Có thêm bếp nướng',null,3,2,2),
@@ -78,7 +76,7 @@ values
 (5,'House Princess 02',10000,'4000000','5','normal','Có thêm bếp nướng',null,2,3,2),
 (6,'Room Twin 02',3000,'900000','2','normal','Có tivi',null,null,4,3);
 
-insert into dich_vu_di_kem
+insert into Accompanied_service
 values
 (1,'Karaoke','10000','giờ','tiện nghi, hiện tại'),
 (2,'Thuê xe máy','10000','chiếc','hỏng 1 xe'),
@@ -87,7 +85,7 @@ values
 (5,'Buffet buổi trưa','90000','suất','đầy đủ đồ ăn, tráng miệng'),
 (6,'Buffet buổi tối','16000','suất','đầy đủ đồ ăn, tráng miệng');
 
-insert into hop_dong
+insert into contract
 values
 (1,'2020-12-08','2020-12-08','0',3,1,3),	
 (2,'2020-07-14','2020-07-21','200000',7,3,1),	
@@ -102,7 +100,7 @@ values
 (11,'2021-04-25','2021-04-25','0',2,2,1),	
 (12,'2021-05-25','2021-05-27','0',7,10,1);
 
-insert into hop_dong_chi_tiet
+insert into detail_contract
 values
 (1,5,2,4),
 (2,8,2,5),
@@ -112,3 +110,27 @@ values
 (6,1,1,3),
 (7,2,1,2),
 (8,2,12,2);
+
+/*task_2: Hiển thị thông tin của tất cả nhân viên có trong hệ thống có tên bắt đầu là một trong
+các ký tự “H”, “T” hoặc “K” và có tối đa 15 kí tự.*/
+
+SELECT * FROM employee WHERE employee_name like "H%" or employee_name like "T%" or employee_name like "K%"  and length(employee_name) <= 15 ;
+
+-- task_3: Hiển thị thông tin của tất cả khách hàng có độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”.
+
+SELECT * FROM customer
+WHERE (round(datediff(curdate(), birthday)/365,0) <= 50 
+and (round(datediff(curdate(), birthday)/365,0) >= 18 )
+and address like "%Đà Nẵng" or address like "%Quảng Trị"
+);
+
+/* task_4: 4.	Đếm xem tương ứng với mỗi khách hàng đã từng đặt phòng bao nhiêu lần. Kết quả hiển thị được sắp xếp tăng dần
+ theo số lần đặt phòng của khách hàng. Chỉ đếm những khách hàng nào có Tên loại khách hàng là “Diamond”.*/
+ 
+select ctm.customer_code, ctm.customer_name, count(*) number_of_bookings
+from customer as ctm
+join contract ctr on ctm.customer_code = ctr.customer_code 
+join custommer_type ctmt on ctmt.custommer_type_code = ctm.custommer_type_code
+where ctmt.custommer_type_name ="Diamond" 
+group by ctm.customer_code
+order by number_of_bookings asc;
