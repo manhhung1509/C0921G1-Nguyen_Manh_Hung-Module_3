@@ -124,7 +124,7 @@ and (round(datediff(curdate(), birthday)/365,0) >= 18 )
 and address like "%Đà Nẵng" or address like "%Quảng Trị"
 );
 
-/* task_4: 4.	Đếm xem tương ứng với mỗi khách hàng đã từng đặt phòng bao nhiêu lần. Kết quả hiển thị được sắp xếp tăng dần
+/* task_4: Đếm xem tương ứng với mỗi khách hàng đã từng đặt phòng bao nhiêu lần. Kết quả hiển thị được sắp xếp tăng dần
  theo số lần đặt phòng của khách hàng. Chỉ đếm những khách hàng nào có Tên loại khách hàng là “Diamond”.*/
  
 select ctm.customer_code, ctm.customer_name, count(*) number_of_bookings
@@ -134,3 +134,22 @@ join custommer_type ctmt on ctmt.custommer_type_code = ctm.custommer_type_code
 where ctmt.custommer_type_name ="Diamond" 
 group by ctm.customer_code
 order by number_of_bookings asc;
+
+/*task_5:	Hiển thị ma_khach_hang, ho_ten, ten_loai_khach, ma_hop_dong, ten_dich_vu, ngay_lam_hop_dong, ngay_ket_thuc,
+ tong_tien (Với tổng tiền được tính theo công thức như sau: Chi Phí Thuê + Số Lượng * Giá, với Số Lượng và Giá là từ bảng
+ dich_vu_di_kem, hop_dong_chi_tiet) cho tất cả các khách hàng đã từng đặt phòng. (những khách hàng nào chưa từng đặt phòng
+ cũng phải hiển thị ra).*/
+ 
+ select customer.customer_code, customer.customer_name, custommer_type.custommer_type_name,
+        contract.contract_code, service.service_name, contract.date_do_contract,
+        contract.end_date, SUM(ifnull(service.rental_costs,0) + ifnull(accompanied_service.price,0)* ifnull(detail_contract.quantity,0) ) as total_money
+from customer
+left join custommer_type on customer.custommer_type_code = custommer_type.custommer_type_code
+left join contract on customer.customer_code = contract.customer_code
+left join service on contract.service_code= service.service_code
+left join service_type on service.service_code = service_type.service_type_code
+left join detail_contract on contract.contract_code = detail_contract.contract_code
+left join accompanied_service on accompanied_service.Accompanied_service_code = detail_contract.Accompanied_service_code
+group by contract_code
+order by customer_code asc, contract_code desc;
+ 
