@@ -233,3 +233,32 @@ order by contract.contract_code
  join customer as c on ct.customer_code = c.customer_code
  join custommer_type as ctmt on c.custommer_type_code = ctmt.custommer_type_code
  where ctmt.custommer_type_code = 1 and (c.address like '%Vinh' or c.address like '%Quảng Ngãi');
+ 
+ /*task_12.	Hiển thị thông tin ma_hop_dong, ho_ten (nhân viên), ho_ten (khách hàng), so_dien_thoai (khách hàng), ten_dich_vu,
+			so_luong_dich_vu_di_kem (được tính dựa trên việc sum so_luong ở dich_vu_di_kem), tien_dat_coc của tất cả các dịch
+            vụ đã từng được khách hàng đặt vào 3 tháng cuối năm 2020 nhưng chưa từng được khách hàng đặt vào 6 tháng đầu năm 2021*/
+
+select ct.contract_code, e.employee_name, c.customer_name, c.phone_number, sv.service_name,
+       sum(ifnull(dtct.quantity,0)) as number_of_accompanied_service, ct.deposit
+from contract as ct 
+join customer c on ct.customer_code = c.customer_code
+join employee e on ct.employee_code = e.employee_code
+join service sv on ct.service_code = sv.service_code
+left join detail_contract dtct on ct.contract_code = dtct.contract_code
+left join accompanied_service asv on dtct.Accompanied_service_code = asv.Accompanied_service_code
+where (year(ct.date_do_contract) = 2020 and month(ct.date_do_contract) in (10 , 11, 12))
+and (month(ct.date_do_contract) not in (1,2,3,4,5,6) and year(ct.date_do_contract) = 2020)
+group by ct.contract_code 
+order by ct.contract_code ;
+
+/*task_13. Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng.
+           (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau).*/
+
+select asv.Accompanied_service_code, asv.Accompanied_service_name, sum(dtct.quantity)
+from accompanied_service as asv
+join  detail_contract dtct on asv.Accompanied_service_code = dtct.Accompanied_service_code
+join  contract ct on dtct.contract_code = ct.contract_code
+group by asv.Accompanied_service_code
+having sum(dtct.quantity) >= all(select quantity
+from detail_contract ); 
+           
