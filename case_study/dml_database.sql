@@ -260,5 +260,17 @@ join  detail_contract dtct on asv.Accompanied_service_code = dtct.Accompanied_se
 join  contract ct on dtct.contract_code = ct.contract_code
 group by asv.Accompanied_service_code
 having sum(dtct.quantity) >= all(select quantity
-from detail_contract ); 
+from detail_contract );
            
+/* task_14.	Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất. Thông tin hiển thị bao gồm ma_hop_dong,
+			ten_loai_dich_vu, ten_dich_vu_di_kem, so_lan_su_dung (được tính dựa trên việc count các ma_dich_vu_di_kem).*/
+            
+ select ct.contract_code, svt.service_type_name, asv.Accompanied_service_name, count(asv.Accompanied_service_code) as number_used
+ from contract as ct
+ join service as sv on ct.service_code = sv.service_code
+ join service_type as svt on sv.service_type_code = svt.service_type_code 
+ join detail_contract as dtct on ct.contract_code = dtct.contract_code
+ join accompanied_service as asv on dtct.Accompanied_service_code = asv.Accompanied_service_code
+group by asv.Accompanied_service_code
+having count(asv.Accompanied_service_code) = 1
+order by ct.contract_code ;
