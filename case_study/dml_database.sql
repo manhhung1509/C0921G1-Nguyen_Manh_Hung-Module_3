@@ -278,7 +278,7 @@ order by ct.contract_code ;
 /*task_15. Hiển thi thông tin của tất cả nhân viên bao gồm ma_nhan_vien, ho_ten, ten_trinh_do, ten_bo_phan, so_dien_thoai,
              dia_chi mới chỉ lập được tối đa 3 hợp đồng từ năm 2020 đến 2021.*/           
              
-select  e.employee_code, e.employee_name , l.level_name, d.department_name, e.phone_number, e.address    
+select e.employee_code, e.employee_name , l.level_name, d.department_name, e.phone_number, e.address    
 from employee as e
 join department as d on e.department_code = d.department_code
 join `level` as l on e.level_code = l.level_code 
@@ -288,7 +288,17 @@ group by ct.employee_code
 having count(ct.employee_code) <=3 
 order by ct.employee_code;
 
+-- task_16. Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2019 đến năm 2021.
 
-
+delete from employee as e
+where e.employee_code not in (
+	select temp.employee_code 
+    from
+		(select e.employee_code 
+			from employee as e
+			join contract as ct on e.employee_code = ct.employee_code
+			where year(ct.date_do_contract) between 2021 and 2020
+			group by ct.employee_code 
+			having count(ct.employee_code) >=1 ) as temp);
              
-             
+         
