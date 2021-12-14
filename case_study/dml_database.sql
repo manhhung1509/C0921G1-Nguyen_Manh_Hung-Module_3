@@ -122,7 +122,7 @@ SELECT *
 FROM customer
 WHERE (round(datediff(curdate(), birthday)/365,0) <= 50 
 and (round(datediff(curdate(), birthday)/365,0) >= 18 )
-and address like "%Đà Nẵng" or address like "%Quảng Trị");
+and (address like "%Đà Nẵng" or address like "%Quảng Trị"));
 
 /* task_4: Đếm xem tương ứng với mỗi khách hàng đã từng đặt phòng bao nhiêu lần. Kết quả hiển thị được sắp xếp tăng dần
  theo số lần đặt phòng của khách hàng. Chỉ đếm những khách hàng nào có Tên loại khách hàng là “Diamond”.*/
@@ -264,7 +264,7 @@ from detail_contract );
 /* task_14.	Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất. Thông tin hiển thị bao gồm ma_hop_dong,
 			ten_loai_dich_vu, ten_dich_vu_di_kem, so_lan_su_dung (được tính dựa trên việc count các ma_dich_vu_di_kem).*/
             
-select ct.contract_code, svt.service_type_name, asv.Accompanied_service_name, count(asv.Accompanied_service_code) as number_used
+select *
 from contract as ct
 join service as sv on ct.service_code = sv.service_code
 join service_type as svt on sv.service_type_code = svt.service_type_code 
@@ -304,12 +304,11 @@ SET FOREIGN_KEY_CHECKS = 1;
 /*task_17. Cập nhật thông tin những khách hàng có ten_loai_khach từ Platinum lên Diamond, chỉ cập nhật những khách hàng
             đã từng đặt phòng với Tổng Tiền thanh toán trong năm 2021 là lớn hơn 1.000.000 VNĐ.*/
             
- update customer
- set custommer_type_code = 1
- where customer.customer_code in (
- select temp.customer_code 
- from
-(select c.customer_code
+update customer
+set custommer_type_code = 1
+where customer.customer_code in (
+select temp.customer_code 
+from(select c.customer_code
 from customer as c
 join contract as ct on c.customer_code = ct.customer_code
 join service as sv on ct.service_code = sv.service_code
@@ -328,9 +327,19 @@ having sum(sv.rental_costs + asv.price * dtct.quantity ) > 1000000 ) as temp
  select c.customer_code
  from customer as c
  join contract as ct on c.customer_code = ct.customer_code
- where year(ct.date_do_contract) = 2020
- ) as temp );
+ where year(ct.date_do_contract) = 2020) as temp );
  set FOREIGN_KEY_CHECKS = 1;
  
+ -- task_19. Cập nhật giá cho các dịch vụ đi kèm được sử dụng trên 10 lần trong năm 2020 lên gấp đôi.
+update accompanied_service as asv
+set asv.price = asv.price * 2
+where asv.Accompanied_service_code in (
+select temp.Accompanied_service_code from (select asv.Accompanied_service_code 
+from contract ct 
+left join detail_contract as dtct on ct.contract_code = dtct.contract_code
+left join accompanied_service as asv on dtct.Accompanied_service_code = asv.Accompanied_service_code
+where  year(ct.date_do_contract) = 2020
+group by asv.Accompanied_service_code
+having sum(ifnull(dtct.quantity,0)) > 10) as temp);
 
-         
+
