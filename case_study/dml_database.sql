@@ -32,7 +32,7 @@ values
 (8,'Nguyễn Hà Đông','1989-09-03','234414123','9000000','0642123111','donghanguyen@gmail.com','111 Hùng Vương, Hà Nội',2,4,4),	
 (9,'Tòng Hoang','1982-09-03','256781231','6000000','0245144444','hoangtong@gmail.com','213 Hàm Nghi, Đà Nẵng',2,4,4),	
 (10,'Nguyễn Công Đạo','1994-01-08','755434343','8000000','0988767111','nguyencongdao12@gmail.com','6 Hoà Khánh, Đồng Nai',2,3,2);					
-				
+            
 insert into custommer_type
 values
 (1,'Diamond'),	
@@ -329,7 +329,7 @@ having sum(sv.rental_costs + asv.price * dtct.quantity ) > 1000000 ) as temp
  join contract as ct on c.customer_code = ct.customer_code
  where year(ct.date_do_contract) = 2020) as temp );
  set FOREIGN_KEY_CHECKS = 1;
- 
+
  -- task_19. Cập nhật giá cho các dịch vụ đi kèm được sử dụng trên 10 lần trong năm 2020 lên gấp đôi.
 update accompanied_service as asv
 set asv.price = asv.price * 2
@@ -344,9 +344,10 @@ having sum(ifnull(dtct.quantity,0)) > 10) as temp);
 
 /*task_20. Hiển thị thông tin của tất cả các nhân viên và khách hàng có trong hệ thống, thông tin hiển thị bao gồm id
            (ma_nhan_vien, ma_khach_hang), ho_ten, email, so_dien_thoai, ngay_sinh, dia_chi.*/
-           
-select c.customer_code, c.customer_name, c.email, c.phone_number, c.birthday, c.address          
-from customer as c
+ 
+ select e.employee_code, e.employee_name, e.email, e.phone_number, e.employee_birthday, e.address          
+from employee as e
 union all
-select e.employee_code, e.employee_name, e.email, e.phone_number, e.employee_birthday, e.address          
-from employee as e;
+select c.customer_code, c.customer_name, c.email, c.phone_number, c.birthday, c.address          
+from customer as c;
+
