@@ -118,22 +118,23 @@ SELECT * FROM employee WHERE employee_name like "H%" or employee_name like "T%" 
 
 -- task_3: Hiển thị thông tin của tất cả khách hàng có độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”.
 
-SELECT * FROM customer
-WHERE (round(datediff(curdate(), birthday)/365,0) <= 50 
-and (round(datediff(curdate(), birthday)/365,0) >= 18 )
-and address like "%Đà Nẵng" or address like "%Quảng Trị"
-);
+SELECT * 
+FROM customer
+	WHERE (round(datediff(curdate(), birthday)/365,0) <= 50 
+	and (round(datediff(curdate(), birthday)/365,0) >= 18 )
+	and address like "%Đà Nẵng" or address like "%Quảng Trị"
+	);
 
 /* task_4: Đếm xem tương ứng với mỗi khách hàng đã từng đặt phòng bao nhiêu lần. Kết quả hiển thị được sắp xếp tăng dần
  theo số lần đặt phòng của khách hàng. Chỉ đếm những khách hàng nào có Tên loại khách hàng là “Diamond”.*/
  
 select ctm.customer_code, ctm.customer_name, count(*) number_of_bookings
 from customer as ctm
-join contract ctr on ctm.customer_code = ctr.customer_code 
-join custommer_type ctmt on ctmt.custommer_type_code = ctm.custommer_type_code
-where ctmt.custommer_type_name ="Diamond" 
-group by ctm.customer_code
-order by number_of_bookings asc;
+	join contract ctr on ctm.customer_code = ctr.customer_code 
+	join custommer_type ctmt on ctmt.custommer_type_code = ctm.custommer_type_code
+	where ctmt.custommer_type_name ="Diamond" 
+	group by ctm.customer_code
+	order by number_of_bookings asc;
 
 /*task_5:	Hiển thị ma_khach_hang, ho_ten, ten_loai_khach, ma_hop_dong, ten_dich_vu, ngay_lam_hop_dong, ngay_ket_thuc,
  tong_tien (Với tổng tiền được tính theo công thức như sau: Chi Phí Thuê + Số Lượng * Giá, với Số Lượng và Giá là từ bảng
@@ -144,47 +145,48 @@ order by number_of_bookings asc;
         contract.contract_code, service.service_name, contract.date_do_contract,
         contract.end_date, sum(ifnull(service.rental_costs,0) + ifnull(accompanied_service.price,0)* ifnull(detail_contract.quantity,0) ) as total_money
 from customer
-left join custommer_type on customer.custommer_type_code = custommer_type.custommer_type_code
-left join contract on customer.customer_code = contract.customer_code
-left join service on contract.service_code= service.service_code
-left join service_type on service.service_code = service_type.service_type_code
-left join detail_contract on contract.contract_code = detail_contract.contract_code
-left join accompanied_service on accompanied_service.Accompanied_service_code = detail_contract.Accompanied_service_code
-group by contract_code
-order by customer_code asc, contract_code desc;
+	left join custommer_type on customer.custommer_type_code = custommer_type.custommer_type_code
+	left join contract on customer.customer_code = contract.customer_code
+	left join service on contract.service_code= service.service_code
+	left join service_type on service.service_code = service_type.service_type_code
+	left join detail_contract on contract.contract_code = detail_contract.contract_code
+	left join accompanied_service on accompanied_service.Accompanied_service_code = detail_contract.Accompanied_service_code
+	group by contract_code
+	order by customer_code asc, contract_code desc;
 
 /* task_6. Hiển thị ma_dich_vu, ten_dich_vu, dien_tich, chi_phi_thue, ten_loai_dich_vu của tất cả các loại dịch vụ chưa từng được 
            khách hàng thực hiện đặt từ quý 1 của năm 2021 (Quý 1 là tháng 1, 2, 3).*/
            
 select service.service_code, service.service_name, service.area, service.rental_costs, service_type.service_type_name
 from service
-join service_type on service.service_type_code = service_type.service_type_code
-where service.service_code not in (
-select service.service_code
-from service
-join service_type on service.service_type_code = service_type.service_type_code
-join contract on service.service_code = contract.service_code
-where contract.date_do_contract between '2021/1/1' and '2021/3/30'
-);
+	join service_type on service.service_type_code = service_type.service_type_code
+	where service.service_code not in (
+		select service.service_code
+		from service
+			join service_type on service.service_type_code = service_type.service_type_code
+			join contract on service.service_code = contract.service_code
+			where contract.date_do_contract between '2021/1/1' and '2021/3/30'
+			);
 
 /* task_7.	Hiển thị thông tin ma_dich_vu, ten_dich_vu, dien_tich, so_nguoi_toi_da, chi_phi_thue, ten_loai_dich_vu của tất cả các loại
  dịch vụ đã từng được khách hàng đặt phòng trong năm 2020 nhưng chưa từng được khách hàng đặt phòng trong năm 2021.*/
  
  select service.service_code, service.service_name, service.area, service.rental_costs, service_type.service_type_name
 from service
-join service_type on service.service_type_code = service_type.service_type_code
-where service.service_code in (
-select service.service_code
-from service
-join service_type on service.service_type_code = service_type.service_type_code
-join contract on service.service_code = contract.service_code
-where contract.date_do_contract between '2020/1/1' and '2020/12/31' 
-and service.service_code not in (select service.service_code
-from service
-join service_type on service.service_type_code = service_type.service_type_code
-join contract on service.service_code = contract.service_code
-where contract.date_do_contract between '2021/1/1' and '2021/12/31')
-);
+	join service_type on service.service_type_code = service_type.service_type_code
+	where service.service_code in (
+		select service.service_code
+			from service
+			join service_type on service.service_type_code = service_type.service_type_code
+			join contract on service.service_code = contract.service_code
+			where contract.date_do_contract between '2020/1/1' and '2020/12/31' 
+			and service.service_code not in (
+				select service.service_code
+					from service
+					join service_type on service.service_type_code = service_type.service_type_code
+					join contract on service.service_code = contract.service_code
+					where contract.date_do_contract between '2021/1/1' and '2021/12/31')
+					);
 
 /*task_8.	Hiển thị thông tin ho_ten khách hàng có trong hệ thống, với yêu cầu ho_ten không trùng nhau.
 Học viên sử dụng theo 3 cách khác nhau để thực hiện yêu cầu trên.*/
@@ -200,39 +202,39 @@ group by customer.customer_name;
 -- cách_3:
 select customer.customer_name
 from customer
-union
-select customer.customer_name
-from customer;
+	union
+	select customer.customer_name
+	from customer;
 
 /*task_9. Thực hiện thống kê doanh thu theo tháng, nghĩa là tương ứng với mỗi tháng trong năm 2021 thì sẽ có bao nhiêu khách hàng thực
            hiện đặt phòng.*/
 select month(ct.date_do_contract) as `month`, count(month(ct.date_do_contract)) as amount_customer
 from customer as c
-join contract as ct on c.customer_code = ct.customer_code
-where year(ct.date_do_contract) = 2021
-group by month(ct.date_do_contract)
-order by `month`;
+	join contract as ct on c.customer_code = ct.customer_code
+	where year(ct.date_do_contract) = 2021
+	group by month(ct.date_do_contract)
+	order by `month`;
 	
 /*10.	Hiển thị thông tin tương ứng với từng hợp đồng thì đã sử dụng bao nhiêu dịch vụ đi kèm. Kết quả hiển thị bao gồm ma_hop_dong,
  ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, so_luong_dich_vu_di_kem (được tính dựa trên việc sum so_luong ở dich_vu_di_kem).*/
 
 select contract.contract_code, contract.date_do_contract, contract.end_date, contract.deposit, sum(ifnull(detail_contract.quantity,0)) as number_of_accompanied_service
 from contract
-left join detail_contract on contract.contract_code = detail_contract.contract_code
-left join accompanied_service on detail_contract.Accompanied_service_code = accompanied_service.Accompanied_service_code
-group by contract.contract_code
-order by contract.contract_code
+	left join detail_contract on contract.contract_code = detail_contract.contract_code
+	left join accompanied_service on detail_contract.Accompanied_service_code = accompanied_service.Accompanied_service_code
+	group by contract.contract_code
+	order by contract.contract_code
 ;	
 /* task_11.	Hiển thị thông tin các dịch vụ đi kèm đã được sử dụng bởi những khách hàng có ten_loai_khach là “Diamond” và có dia_chi 
             ở “Vinh” hoặc “Quảng Ngãi”.*/
             
  select `as`.Accompanied_service_code, `as`.Accompanied_service_name
  from accompanied_service as `as`
- join detail_contract as dc on `as`.Accompanied_service_code = dc.Accompanied_service_code
- join contract as ct on dc.contract_code = ct.contract_code
- join customer as c on ct.customer_code = c.customer_code
- join custommer_type as ctmt on c.custommer_type_code = ctmt.custommer_type_code
- where ctmt.custommer_type_code = 1 and (c.address like '%Vinh' or c.address like '%Quảng Ngãi');
+	 join detail_contract as dc on `as`.Accompanied_service_code = dc.Accompanied_service_code
+	 join contract as ct on dc.contract_code = ct.contract_code
+	 join customer as c on ct.customer_code = c.customer_code
+	 join custommer_type as ctmt on c.custommer_type_code = ctmt.custommer_type_code
+	 where ctmt.custommer_type_code = 1 and (c.address like '%Vinh' or c.address like '%Quảng Ngãi');
  
  /*task_12.	Hiển thị thông tin ma_hop_dong, ho_ten (nhân viên), ho_ten (khách hàng), so_dien_thoai (khách hàng), ten_dich_vu,
 			so_luong_dich_vu_di_kem (được tính dựa trên việc sum so_luong ở dich_vu_di_kem), tien_dat_coc của tất cả các dịch
@@ -241,64 +243,87 @@ order by contract.contract_code
 select ct.contract_code, e.employee_name, c.customer_name, c.phone_number, sv.service_name,
        sum(ifnull(dtct.quantity,0)) as number_of_accompanied_service, ct.deposit
 from contract as ct 
-join customer c on ct.customer_code = c.customer_code
-join employee e on ct.employee_code = e.employee_code
-join service sv on ct.service_code = sv.service_code
-left join detail_contract dtct on ct.contract_code = dtct.contract_code
-left join accompanied_service asv on dtct.Accompanied_service_code = asv.Accompanied_service_code
-where (year(ct.date_do_contract) = 2020 and month(ct.date_do_contract) in (10 , 11, 12))
-and (month(ct.date_do_contract) not in (1,2,3,4,5,6) and year(ct.date_do_contract) = 2020)
-group by ct.contract_code 
-order by ct.contract_code ;
+	join customer c on ct.customer_code = c.customer_code
+	join employee e on ct.employee_code = e.employee_code
+	join service sv on ct.service_code = sv.service_code
+	left join detail_contract dtct on ct.contract_code = dtct.contract_code
+	left join accompanied_service asv on dtct.Accompanied_service_code = asv.Accompanied_service_code
+	where (year(ct.date_do_contract) = 2020 and month(ct.date_do_contract) in (10 , 11, 12))
+	and (month(ct.date_do_contract) not in (1,2,3,4,5,6) and year(ct.date_do_contract) = 2020)
+	group by ct.contract_code 
+	order by ct.contract_code ;
 
 /*task_13. Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng.
            (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau).*/
 
 select asv.Accompanied_service_code, asv.Accompanied_service_name, sum(dtct.quantity)
 from accompanied_service as asv
-join  detail_contract dtct on asv.Accompanied_service_code = dtct.Accompanied_service_code
-join  contract ct on dtct.contract_code = ct.contract_code
-group by asv.Accompanied_service_code
-having sum(dtct.quantity) >= all(select quantity
-from detail_contract );
+	join  detail_contract dtct on asv.Accompanied_service_code = dtct.Accompanied_service_code
+	join  contract ct on dtct.contract_code = ct.contract_code
+	group by asv.Accompanied_service_code
+	having sum(dtct.quantity) >= all(select quantity
+	from detail_contract );
            
 /* task_14.	Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất. Thông tin hiển thị bao gồm ma_hop_dong,
 			ten_loai_dich_vu, ten_dich_vu_di_kem, so_lan_su_dung (được tính dựa trên việc count các ma_dich_vu_di_kem).*/
             
 select ct.contract_code, svt.service_type_name, asv.Accompanied_service_name, count(asv.Accompanied_service_code) as number_used
 from contract as ct
-join service as sv on ct.service_code = sv.service_code
-join service_type as svt on sv.service_type_code = svt.service_type_code 
-join detail_contract as dtct on ct.contract_code = dtct.contract_code
-join accompanied_service as asv on dtct.Accompanied_service_code = asv.Accompanied_service_code
-group by asv.Accompanied_service_code
-having count(asv.Accompanied_service_code) = 1
-order by ct.contract_code ;
+	join service as sv on ct.service_code = sv.service_code
+	join service_type as svt on sv.service_type_code = svt.service_type_code 
+	join detail_contract as dtct on ct.contract_code = dtct.contract_code
+	join accompanied_service as asv on dtct.Accompanied_service_code = asv.Accompanied_service_code
+	group by asv.Accompanied_service_code
+	having count(asv.Accompanied_service_code) = 1
+	order by ct.contract_code ;
 
 /*task_15. Hiển thi thông tin của tất cả nhân viên bao gồm ma_nhan_vien, ho_ten, ten_trinh_do, ten_bo_phan, so_dien_thoai,
              dia_chi mới chỉ lập được tối đa 3 hợp đồng từ năm 2020 đến 2021.*/           
              
 select e.employee_code, e.employee_name , l.level_name, d.department_name, e.phone_number, e.address    
 from employee as e
-join department as d on e.department_code = d.department_code
-join `level` as l on e.level_code = l.level_code 
-join contract as ct on e.employee_code = ct.employee_code
-where year(ct.date_do_contract) = 2021 or year(ct.date_do_contract) = 2020
-group by ct.employee_code 
-having count(ct.employee_code) <=3 
-order by ct.employee_code;
+	join department as d on e.department_code = d.department_code
+	join `level` as l on e.level_code = l.level_code 
+	join contract as ct on e.employee_code = ct.employee_code
+	where year(ct.date_do_contract) = 2021 or year(ct.date_do_contract) = 2020
+	group by ct.employee_code 
+	having count(ct.employee_code) <=3 
+	order by ct.employee_code;
 
 -- task_16. Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2019 đến năm 2021.
 
+SET FOREIGN_KEY_CHECKS = 0;
 delete from employee as e
 where e.employee_code not in (
 	select temp.employee_code 
     from
-		(select e.employee_code 
+		(select e.employee_code
 			from employee as e
 			join contract as ct on e.employee_code = ct.employee_code
-			where year(ct.date_do_contract) between 2021 and 2020
+			where year(ct.date_do_contract) between 2020 and 2021
 			group by ct.employee_code 
-			having count(ct.employee_code) >=1 ) as temp);
-             
+			having count(ct.employee_code) >=1 ) as temp) ;
+SET FOREIGN_KEY_CHECKS = 1;
+
+/*task_17.	Cập nhật thông tin những khách hàng có ten_loai_khach từ Platinum lên Diamond, chỉ cập nhật những khách hàng
+            đã từng đặt phòng với Tổng Tiền thanh toán trong năm 2021 là lớn hơn 1.000.000 VNĐ.*/
+            
+ update customer
+ set custommer_type_code = 1
+ where customer.customer_code in (
+ select temp.customer_code 
+    from
+		(select c.customer_code
+			from customer as c
+			join contract as ct on c.customer_code = ct.customer_code
+			join service as sv on ct.service_code = sv.service_code
+            join detail_contract as dtct on ct.contract_code = dtct.contract_code
+            join accompanied_service as asv on dtct.Accompanied_service_code = asv.Accompanied_service_code
+			where year(ct.date_do_contract) = 2021 and c.custommer_type_code =2
+			group by ct.customer_code 
+			having sum(sv.rental_costs + asv.price * dtct.quantity ) > 1000000 ) as temp
+ );
+ 
+ 
+ 
          
