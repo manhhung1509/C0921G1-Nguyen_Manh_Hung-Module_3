@@ -321,5 +321,16 @@ having sum(sv.rental_costs + asv.price * dtct.quantity ) > 1000000 ) as temp
  );
  
  -- task_18. Xóa những khách hàng có hợp đồng trước năm 2021 (chú ý ràng buộc giữa các bảng).
+ set FOREIGN_KEY_CHECKS = 0;
+ delete from customer as c
+ where c.customer_code in (
+ select temp.customer_code from(
+ select c.customer_code
+ from customer as c
+ join contract as ct on c.customer_code = ct.customer_code
+ where year(ct.date_do_contract) = 2020
+ ) as temp );
+ set FOREIGN_KEY_CHECKS = 1;
  
+
          
