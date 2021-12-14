@@ -342,4 +342,11 @@ where  year(ct.date_do_contract) = 2020
 group by asv.Accompanied_service_code
 having sum(ifnull(dtct.quantity,0)) > 10) as temp);
 
-
+/*task_20. Hiển thị thông tin của tất cả các nhân viên và khách hàng có trong hệ thống, thông tin hiển thị bao gồm id
+           (ma_nhan_vien, ma_khach_hang), ho_ten, email, so_dien_thoai, ngay_sinh, dia_chi.*/
+           
+select c.customer_code, c.customer_name, c.email, c.phone_number, c.birthday, c.address          
+from customer as c
+union all
+select e.employee_code, e.employee_name, e.email, e.phone_number, e.employee_birthday, e.address          
+from employee as e;
