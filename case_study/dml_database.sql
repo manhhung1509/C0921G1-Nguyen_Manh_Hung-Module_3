@@ -114,11 +114,13 @@ values
 /*task_2: Hiển thị thông tin của tất cả nhân viên có trong hệ thống có tên bắt đầu là một trong
 các ký tự “H”, “T” hoặc “K” và có tối đa 15 kí tự.*/
 
-SELECT * FROM employee WHERE employee_name like "H%" or employee_name like "T%" or employee_name like "K%"  and length(employee_name) <= 15 ;
+SELECT employee_code, employee_name
+FROM employee 
+WHERE employee_name like "H%" or employee_name like "T%" or employee_name like "K%"  and length(employee_name) <= 15 ;
 
 -- task_3: Hiển thị thông tin của tất cả khách hàng có độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”.
 
-SELECT * 
+SELECT customer_code, customer_name
 FROM customer
 WHERE (round(datediff(curdate(), birthday)/365,0) <= 50 
 and (round(datediff(curdate(), birthday)/365,0) >= 18 )
@@ -264,7 +266,7 @@ from detail_contract );
 /* task_14.	Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất. Thông tin hiển thị bao gồm ma_hop_dong,
 			ten_loai_dich_vu, ten_dich_vu_di_kem, so_lan_su_dung (được tính dựa trên việc count các ma_dich_vu_di_kem).*/
             
-select *
+select ct.date_do_contract, svt.service_type_name, asv.Accompanied_service_name, count(asv.Accompanied_service_code) as number_used
 from contract as ct
 join service as sv on ct.service_code = sv.service_code
 join service_type as svt on sv.service_type_code = svt.service_type_code 
@@ -277,7 +279,7 @@ order by ct.contract_code ;
 /*task_15. Hiển thi thông tin của tất cả nhân viên bao gồm ma_nhan_vien, ho_ten, ten_trinh_do, ten_bo_phan, so_dien_thoai,
              dia_chi mới chỉ lập được tối đa 3 hợp đồng từ năm 2020 đến 2021.*/           
              
-select e.employee_code, e.employee_name , l.level_name, d.department_name, e.phone_number, e.address    
+select *    
 from employee as e
 join department as d on e.department_code = d.department_code
 join `level` as l on e.level_code = l.level_code 
@@ -296,7 +298,7 @@ from
 (select e.employee_code
 from employee as e
 join contract as ct on e.employee_code = ct.employee_code
-where year(ct.date_do_contract) between 2020 and 2021
+where year(ct.date_do_contract) between 2019 and 2021
 group by ct.employee_code 
 having count(ct.employee_code) >=1 ) as temp) ;
 SET FOREIGN_KEY_CHECKS = 1;

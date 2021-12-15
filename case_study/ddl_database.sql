@@ -2,111 +2,111 @@ create database case_study;
 
 use case_study;
 
-create table vi_tri(
-ma_vi_tri int primary key,
-ten_vi_tri varchar(45)
+create table `position`(
+position_code int primary key,
+position_name varchar(45)
 );
 
-create table trinh_do(
-ma_trinh_do int primary key,
-ten_trinh_do varchar(45)
+create table `level`(
+level_code int primary key,
+level_name varchar(45)
 );
 
- create table bo_phan(
- ma_bo_phan int primary key,
- ten_bo_phan varchar(45)
+ create table department(
+ department_code int primary key,
+ department_name varchar(45)
  );
  
- create table nhan_vien(
-ma_nhan_vien int primary key,
-ho_ten varchar(45),
-ngay_sinh date,
-so_cmnd varchar(45),
-luong double,
-so_dien_thoai varchar(45),
+ create table employee(
+employee_code int primary key,
+employee_name varchar(45),
+employee_birthday date,
+employee_id varchar(45),
+salary double,
+phone_number varchar(45),
 email varchar(45),
-dia_chi varchar(45),
-ma_vi_tri int,
-ma_trinh_do int,
-ma_bo_phan int,
-foreign key(ma_vi_tri) references vi_tri(ma_vi_tri),
-foreign key(ma_trinh_do) references trinh_do(ma_trinh_do),
-foreign key(ma_bo_phan) references bo_phan(ma_bo_phan)
+address varchar(45),
+position_code int,
+level_code int,
+department_code int,
+foreign key(position_code) references `position`(position_code),
+foreign key(level_code) references `level`(level_code),
+foreign key(department_code) references department(department_code)
 );
 
- create table loai_khach(
- ma_loai_khach int primary key,
- ten_loai_khach varchar(45)
+ create table custommer_type(
+ custommer_type_code int primary key,
+ custommer_type_name varchar(45)
  );
 
-create table khach_hang(
-ma_khach_hang int primary key,
-ho_va_ten varchar(45),
-ngay_sinh date,
-gioi_tinh bit(1),
-so_cmnd varchar(45),
-so_dien_thoai varchar(45),
+create table customer(
+customer_code int primary key,
+customer_name varchar(45),
+birthday date,
+gender bit(1),
+id varchar(45),
+phone_number varchar(45),
 email varchar(45),
-dia_chi varchar(45),
-ma_loai_khach int,
-foreign key(ma_loai_khach) references loai_khach(ma_loai_khach)
+address varchar(45),
+custommer_type_code int,
+foreign key(custommer_type_code) references custommer_type(custommer_type_code)
 );
 
-create table kieu_thue(
-ma_kieu_thue int primary key,
-ten_kieu_thue varchar(45)
+create table rental_type(
+rental_type_code int primary key,
+rental_type_name varchar(45)
 );
 
-create table loai_dich_vu(
-ma_loai_dich_vu int primary key,
-ten_loai_dich_vu varchar(45)
+create table service_type(
+service_type_code int primary key,
+service_type_name varchar(45)
 );
 
 
-create table dich_vu(
-ma_dich_vu int primary key,
-ten_dich_vu varchar(45),
-dien_tich int,
-chi_phi_thue double,
-so_nguoi_toi_da int,
-tieu_chuan_phong varchar(45),
-mo_ta_tien_ich_khac varchar(45),
-dien_tich_ho_boi double,
-so_tang int,
-ma_kieu_thue int,
-ma_loai_dich_vu int,	
-foreign key (ma_kieu_thue) references kieu_thue(ma_kieu_thue),
-foreign key (ma_loai_dich_vu) references loai_dich_vu(ma_loai_dich_vu)
+create table service(
+service_code int primary key,
+service_name varchar(45),
+area int,
+rental_costs double,
+maximun_people int,
+standard_of_room varchar(45),
+description_other_Utilities varchar(45),
+pool_area double,
+number_of_floor int,
+rental_type_code int,
+service_type_code int,	
+foreign key (rental_type_code) references rental_type(rental_type_code),
+foreign key (service_type_code) references service_type(service_type_code)
 );
 
-create table dich_vu_di_kem(
-ma_dich_vu_di_kem int primary key,
-ten_dich_vu_di_kem varchar(45),
-gia double,
-don_vi varchar(10),
-trang_thai varchar(45)
+create table accompanied_service(
+accompanied_service_code int primary key,
+accompanied_service_name varchar(45),
+price double,
+unit varchar(10),
+`status` varchar(45)
 );
 
- create table hop_dong(
- ma_hop_dong int primary key,
- ngay_lam_hop_dong date,
- ngay_ket_thuc date,
- tien_dat_coc double,
- ma_nhan_vien int,
- ma_khach_hang int,
- ma_dich_vu int,
- foreign key(ma_nhan_vien) references nhan_vien(ma_nhan_vien),
- foreign key(ma_khach_hang) references khach_hang(ma_khach_hang),
-  foreign key(ma_dich_vu) references dich_vu(ma_dich_vu)
+ create table contract(
+ contract_code int primary key,
+ date_do_contract date,
+ end_date date,
+ deposit double,
+ employee_code int,
+ customer_code int,
+ service_code int,
+ foreign key(employee_code) references employee(employee_code),
+ foreign key(customer_code) references customer(customer_code),
+  foreign key(service_code) references service(service_code)
  );
 
-create table hop_dong_chi_tiet(
- ma_hop_dong_chi_tiet int primary key,
- so_luong int,
- ma_hop_dong int,
- ma_dich_vu_di_kem int,
- foreign key(ma_hop_dong) references hop_dong(ma_hop_dong),
- foreign key(ma_dich_vu_di_kem) references dich_vu_di_kem(ma_dich_vu_di_kem)
+create table detail_contract(
+ detail_contract_code int primary key,
+ quantity int,
+ contract_code int,
+ accompanied_service_code int,
+ foreign key(contract_code) references contract(contract_code),
+ foreign key(accompanied_service_code) references accompanied_service(accompanied_service_code)
  );
  
 
