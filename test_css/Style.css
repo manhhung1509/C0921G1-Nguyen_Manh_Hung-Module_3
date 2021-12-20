@@ -1,0 +1,56 @@
+table, th, td {
+    /*tạo đưuòng viền cho bảng*/
+    border: 1px solid black;
+}
+th {
+    /*set màu cho backgroud*/
+    background: #dddddd;
+    color: green;
+    height: 30px;
+}
+td {
+    height: 50px;
+    /*căn dưới văn bản trong table*/
+    /*vertical-align: bottom;*/
+}
+table {
+    /*chỉ tạo một đường viền cho bảng*/
+    border-collapse: collapse;
+    width: 60%;
+    /*căn giữa văn bản*/
+    text-align: center;
+}
+th, td{
+    /*tạo khoảng cách giữa văn bản với đường viền*/
+    padding: 10px;
+}
+tr {
+    background: cornsilk;
+}
+div {
+    /*mỗi dòng sẽ được kéo dãn do đó chúng có chiều rộng bằng nhau, và các lề trái và phải thẳng hàng nhau*/
+    border: 1px solid;
+    padding: 10px;
+    width: 250px;
+    height: 180px;
+    text-align: justify;
+}
+a{
+    /*xóa gạch chân dưới đường link*/
+    text-decoration: none;
+    color: red;
+}
+#p1 {
+    /*text-transform: lowercase;*/
+    /*text-transform: uppercase;*/
+    text-transform: capitalize;
+    /*set khoảng cách giữa các ký tự*/
+    /*letter-spacing: 5px;*/
+    color: green;
+    /*thụt lề dòng đầu tiên của văn bản*/
+    text-indent: 30px;
+    /*set khoảng cách (chiều cao) giữa các dòng trong văn bản */
+    /*line-height: 1.5;*/
+   /*thay đổi hướng của văn bản*/
+   /* direction: rtl;*/
+}

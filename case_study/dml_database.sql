@@ -116,7 +116,7 @@ các ký tự “H”, “T” hoặc “K” và có tối đa 15 kí tự.*/
 
 SELECT employee_code, employee_name
 FROM employee 
-WHERE employee_name like "H%" or employee_name like "T%" or employee_name like "K%"  and length(employee_name) <= 15 ;
+WHERE (employee_name like "H%" or employee_name like "T%" or employee_name like "K%")  and length(employee_name) <= 15 ;
 
 -- task_3: Hiển thị thông tin của tất cả khách hàng có độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”.
 
@@ -322,7 +322,7 @@ having sum(sv.rental_costs + asv.price * dtct.quantity ) > 1000000 ) as temp
  );
  
  -- task_18. Xóa những khách hàng có hợp đồng trước năm 2021 (chú ý ràng buộc giữa các bảng).
- set FOREIGN_KEY_CHECKS = 0;
+/* set FOREIGN_KEY_CHECKS = 0;
  delete from customer as c
  where c.customer_code in (
  select temp.customer_code from(
@@ -330,7 +330,17 @@ having sum(sv.rental_costs + asv.price * dtct.quantity ) > 1000000 ) as temp
  from customer as c
  join contract as ct on c.customer_code = ct.customer_code
  where year(ct.date_do_contract) = 2020) as temp );
- set FOREIGN_KEY_CHECKS = 1;
+ set FOREIGN_KEY_CHECKS = 1;*/
+ 
+  set FOREIGN_KEY_CHECKS = 0;
+  delete from customer as c
+  where c.customer_code in (
+  select temp.customer_code from (
+  select ct.customer_code
+  from contract as ct
+  where year(ct.date_do_contract) < 2021) as temp
+  );
+  set FOREIGN_KEY_CHECKS = 1;
 
  -- task_19. Cập nhật giá cho các dịch vụ đi kèm được sử dụng trên 10 lần trong năm 2020 lên gấp đôi.
 update accompanied_service as asv
