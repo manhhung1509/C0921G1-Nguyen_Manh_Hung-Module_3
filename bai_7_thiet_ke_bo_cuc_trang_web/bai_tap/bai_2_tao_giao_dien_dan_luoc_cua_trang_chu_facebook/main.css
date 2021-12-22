@@ -158,7 +158,7 @@
 .header_icon_right {
     font-size: 30px;
     color: #333333;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 .header_icon_right:hover,
@@ -246,40 +246,121 @@
     font-size: 13px;
 }
 
-.body_right_add_friend {
-    font-size: 16px;
-    color: #b3adad;
+.body_left_content {
+    border-top: #c4bfbf solid 1px;
 }
 
-.body_right_div1 {
+.body_right_row_1 {
+    /*border: solid 1px;*/
     display: flex;
     float: right;
-    margin-right: 10px;
-    height: 45px;
-    width: 363px;
-    background: beige;
 }
 
-.add_fr {
-    margin-right: 46px;
-    padding-left: 48px;
+/*.body_right_row_2:hover{*/
+/*    background-color: #ff253a;*/
+/*}*/
+
+.require_add_fr {
+    margin-top: 8px;
+    margin-right: 61px;
 }
 
-.p_see_all {
-    font-size: 15px;
-    color: dodgerblue;
-    padding-top: 5px;
+.body_right_row_1_h2_require_add_fr {
+    color: #2669ef;
 }
 
-.see_all {
-    margin-right: 17px;
-    margin-left: 53px;
+.body_right_row_1_h4_see_all {
+    margin-top: 18px;
+    font-size: 13px;
+    color: #417aee;
 }
 
-.div_an{
-    height: 0px;
+.body_right_row_2_1_icon_person {
+    margin-top: 6px;
+    font-size: 50px;
+    color: deeppink;
 }
-.frame_add_friend{
-    background: green;
-    height: 70px;
+
+.body_right_row_2_2_icon_person {
+    font-size: 12px;
+    color: green;
+}
+
+.body_right_row_2_1_col_3_r1 {
+    color: grey;
+    font-size: 12px;
+    margin-top: 11px;
+}
+
+.body_right_row_2_2 {
+    float: right;
+}
+
+.body_right_row_2_2_confirm_and_delete {
+    display: flex;
+}
+
+.body_right_row_2_2_confirm {
+    background: #4692f2;
+    border-radius: 11px;
+    margin-right: 8px;
+    height: 40px;
+    width: 85px;
+}
+
+.body_right_row_2_2_delete {
+    background: #afb3ba;
+    border-radius: 11px;
+    width: 85px;
+    height: 40px;
+}
+
+.confirm {
+    color: white;
+    text-align: center;
+}
+
+.delete {
+    color: #212020;
+    text-align: center;
+}
+
+.body_right_gift_box {
+    font-size: 28px;
+    color: #fa0707;
+}
+
+.body_right_row_3_c1_r2 {
+    border-bottom: #999696 solid 1px;
+}
+
+.body_right_row_4_c1_r1 {
+    float: right;
+}
+
+.contact_people {
+    display: flex;
+}
+
+.contain_contact_people_icon {
+    margin-top: 10px;
+}
+
+.contact_people_icon {
+    color: dimgrey;
+    font-size: 14px;
+}
+
+.people_in_list_online {
+    height: 30px;
+}
+
+.icon_people_in_list_online {
+    font-size: 25px;
+}
+
+.name_of_people_list_online {
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 10px;
 }
