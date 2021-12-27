@@ -1,3 +1,31 @@
 .nav{
     height: 70px;
 }
+/*.has{*/
+/*    !*margin:  1%;*!*/
+/*    !*width: 23%;*!*/
+/*    flex:0 0 auto;width:23%;*/
+/*}*/
+
+/*@media screen and (max-width : 768px){*/
+/*    .has{*/
+/*        width: 31% !important;*/
+/*        margin: 1% !important;*/
+/*    }*/
+/*}*/
+@media (min-width:992px){
+    .col-laptop-3{
+        flex:0 0 auto;
+        width:23%;
+        margin: 1%;
+    }
+}
+
+@media (max-width: 991px){
+    .col-phone-6{
+        flex:0 0 auto;
+        width:48%;
+        margin: 1%;
+}
+}
+
