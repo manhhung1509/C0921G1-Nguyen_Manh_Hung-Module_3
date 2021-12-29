@@ -5,34 +5,42 @@
     <title>Title</title>
 </head>
 <body>
-<h2>Edit product</h2>
-<form action="/controller.EditServlet" method="post">
-    <div>
-        Id of product wanna edit:
-        <input type="text" name="idToEdit">
-    </div>
-    <div>
-        Name:
-        <input type="text" name="productName">
-    </div>
-    <div>
-        Address:
-        <input type="text" name="address">
-    </div>
-    <div>
-        identify:
-        <input type="text" name="id">
-    </div>
-    <div>
-        email:
-        <input type="text" name="email">
-    </div>
-    <div>
-        <input type="submit" value="edit">
-    </div>
+<a href="UserControllerServlet">Quay lại trang danh sách User</a>
+<form action="UserControllerServlet" method="post">
+    <table>
+        <tr>
+            <td>
+                <input type="hidden" name="id" value="${userID}">
+            </td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>
+                <input type="text" name="name">
+            </td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>
+                <input type="text" name="email">
+            </td>
+        </tr>
+        <tr>
+            <td>Country</td>
+            <td>
+                <input type="text" name="country">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" name="userChoice" value="update">
+            </td>
+        </tr>
+    </table>
 </form>
-<h3>
-    <c:out value="${message}"/>
-</h3>
+<h2 style="color: green">
+    <c:out value="${massage}"/>
+</h2>
 </body>
 </html>

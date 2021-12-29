@@ -5,12 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-<form action="/userControllerServlet" method="post">
+<a href="UserControllerServlet">Quay lại trang danh sách User</a>
+<form action="UserControllerServlet" method="post">
     <table>
         <tr>
-            <td>ID</td>
             <td>
-                <input type="text" name="id">
+                <input type="hidden" name="id" value="${userID}">
             </td>
         </tr>
         <tr>
@@ -34,10 +34,13 @@
         <tr>
             <td></td>
             <td>
-                <input type="submit" value="Update">
+                <input type="submit" name="userChoice" value="update">
             </td>
         </tr>
     </table>
 </form>
+<h2 style="color: green">
+    <c:out value="${massage}"/>
+</h2>
 </body>
 </html>

@@ -144,7 +144,7 @@ order by number_of_bookings asc;
  
  select customer.customer_code, customer.customer_name, custommer_type.custommer_type_name,
         contract.contract_code, service.service_name, contract.date_do_contract,
-        contract.end_date, sum(ifnull(service.rental_costs,0) + ifnull(accompanied_service.price,0)* ifnull(detail_contract.quantity,0) ) as total_money
+        contract.end_date, sum(ifnull(service.rental_costs,0) + ifnull(accompanied_service.price,0)* ifnull(detail_contract.quantity,0)) as total_money
 from customer
 left join custommer_type on customer.custommer_type_code = custommer_type.custommer_type_code
 left join contract on customer.customer_code = contract.customer_code
@@ -346,7 +346,8 @@ having sum(sv.rental_costs + asv.price * dtct.quantity ) > 1000000 ) as temp
 update accompanied_service as asv
 set asv.price = asv.price * 2
 where asv.Accompanied_service_code in (
-select temp.Accompanied_service_code from (select asv.Accompanied_service_code 
+select temp.Accompanied_service_code from (
+select asv.Accompanied_service_code 
 from contract ct 
 left join detail_contract as dtct on ct.contract_code = dtct.contract_code
 left join accompanied_service as asv on dtct.Accompanied_service_code = asv.Accompanied_service_code

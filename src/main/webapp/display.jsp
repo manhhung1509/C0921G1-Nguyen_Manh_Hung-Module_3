@@ -6,35 +6,26 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-<%--<table class="table">--%>
-<%--    <thead>--%>
-<%--    <tr>--%>
-<%--        <th scope="col">ID</th>--%>
-<%--        <th scope="col">Name</th>--%>
-<%--        <th scope="col">email</th>--%>
-<%--        <th scope="col">County</th>--%>
-<%--    </tr>--%>
-<%--    </thead>--%>
-<%--    <tbody>--%>
-<%--    <c:forEach var="user" items="${listUser}">--%>
-<%--        <tr>--%>
-<%--            <td>${user.id}</td>--%>
-<%--            <td>${user.name}</td>--%>
-<%--            <td>${user.email}</td>--%>
-<%--            <td>${user.country}</td>--%>
-<%--        </tr>--%>
-<%--    </c:forEach>>--%>
-<%--    </tbody>--%>
-<%--</table>--%>
-
-<table>
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>EMail</th>
-            <th>Country</th>
-            <th>Choice</th>
-        </tr>
+<form action="UserControllerServlet" method="post">
+    <div>
+        Enter name of country you wanna search:
+        <input type="text" name="country">
+    </div>
+    <div>
+        <input type="submit" name="userChoice" value="search">
+    </div>
+</form>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">email</th>
+        <th scope="col">County</th>
+        <th scope="col">Choice</th>
+    </tr>
+    </thead>
+    <tbody>
     <c:forEach var="user" items="${listUser}">
         <tr>
             <td>${user.id}</td>
@@ -42,19 +33,24 @@
             <td>${user.email}</td>
             <td>${user.country}</td>
             <td>
-                <a href="userControllerServlet?userID=${user.id}">Edit</a>
+                <a href="UserControllerServlet?userId=${user.id}">Edit</a>
                 <a href="#" onclick="showMessage(${user.id})">Delete</a>
             </td>
         </tr>
     </c:forEach>>
+    </tbody>
 </table>
 <a href="create.jsp">Create User</a>
+<%--<a href="search_by_country.jsp">Search by name</a>--%>
+<form action="UserControllerServlet" method="post">
+    <input type="submit" name="userChoice" value="sort">
+</form>
 </body>
 <script>
-    function showMessage(id){
-        let  option = confirm("Are you sure to delete");
-        if (option === true){
-            window.location.href = "userControllerServlet?userID="+id;
+    function showMessage(id) {
+        let option = confirm("Are you sure to delete");
+        if (option === true) {
+            window.location.href = "UserControllerServlet?userDeleteId=" + id;
         }
     }
 </script>
