@@ -72,7 +72,7 @@ public class UserControllerServlet extends HttpServlet {
         try {
             switch (action) {
                 case "create":
-                    editUser(request, response);
+                    createUser(request, response);
                     break;
                 default:
                     UserService userService = new UserServiceIMPL();

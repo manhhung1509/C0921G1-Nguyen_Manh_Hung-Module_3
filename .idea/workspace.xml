@@ -20,144 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc2188b9-024b-40be-9fb1-c384d30b0ede" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-9.0.41/apache-tomcat-9.0.41/webapps/ROOT/WEB-INF/classes/bean/Product.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-9.0.41/apache-tomcat-9.0.41/webapps/ROOT/WEB-INF/classes/controller/CreateServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-9.0.41/apache-tomcat-9.0.41/webapps/ROOT/WEB-INF/classes/controller/DeleteServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-9.0.41/apache-tomcat-9.0.41/webapps/ROOT/WEB-INF/classes/controller/EditServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-9.0.41/apache-tomcat-9.0.41/webapps/ROOT/WEB-INF/classes/controller/ProductServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-9.0.41/apache-tomcat-9.0.41/webapps/ROOT/WEB-INF/classes/controller/SearchByNameServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-9.0.41/apache-tomcat-9.0.41/webapps/ROOT/WEB-INF/classes/controller/ShowDetailProductServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-9.0.41/apache-tomcat-9.0.41/webapps/ROOT/WEB-INF/classes/reponsitory/ProductResponsibility.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-9.0.41/apache-tomcat-9.0.41/webapps/ROOT/WEB-INF/classes/reponsitory/impl/ProductResponsibilityIMPL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-9.0.41/apache-tomcat-9.0.41/webapps/ROOT/WEB-INF/classes/service/impl/ProductService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-9.0.41/apache-tomcat-9.0.41/webapps/ROOT/WEB-INF/classes/service/impl/ProductServiceIMPL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-9.0.41/apache-tomcat-9.0.41/webapps/ROOT/create_product.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-9.0.41/apache-tomcat-9.0.41/webapps/ROOT/customer_choice.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-9.0.41/apache-tomcat-9.0.41/webapps/ROOT/delete.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-9.0.41/apache-tomcat-9.0.41/webapps/ROOT/display.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-9.0.41/apache-tomcat-9.0.41/webapps/ROOT/display.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-9.0.41/apache-tomcat-9.0.41/webapps/ROOT/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-9.0.41/apache-tomcat-9.0.41/webapps/ROOT/edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-9.0.41/apache-tomcat-9.0.41/webapps/ROOT/search_by_name.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-9.0.41/apache-tomcat-9.0.41/webapps/ROOT/show_detail.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_11_mvc/bai_tap/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bai_11_mvc/bai_tap/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.gradle/6.1/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.gradle/6.1/fileContent/fileContent.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.gradle/6.1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.gradle/6.1/javaCompile/classAnalysis.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.gradle/6.1/javaCompile/taskHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.gradle/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.gradle/checksums/md5-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.gradle/checksums/sha1-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/build/classes/java/main/bean/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/build/classes/java/main/controller/CreateServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/build/classes/java/main/controller/DisplayServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/build/classes/java/main/controller/EditServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/build/classes/java/main/controller/FindByCountryServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/build/classes/java/main/controller/SortByNameServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/build/classes/java/main/controller/UserControllerServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/build/classes/java/main/controller/deleteServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/build/classes/java/main/responsibility/BaseRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/build/classes/java/main/responsibility/UserResponsibility.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/build/classes/java/main/responsibility/impl/UserResponsibilityIMPL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/build/classes/java/main/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/build/classes/java/main/service/impl/UserServiceIMPL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/build/libs/quan_ly_user-1.0-SNAPSHOT.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/build/tmp/war/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/java/bean/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/java/controller/CreateServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/java/controller/DisplayServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/java/controller/EditServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/java/controller/FindByCountryServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/java/controller/SortByNameServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/java/controller/UserControllerServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/java/controller/deleteServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/java/responsibility/BaseRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/java/responsibility/UserResponsibility.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/java/responsibility/impl/UserResponsibilityIMPL.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/java/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/java/service/impl/UserServiceIMPL.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/create.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap-grid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap-grid.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap-grid.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap-grid.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap-grid.rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap-grid.rtl.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap-grid.rtl.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap-grid.rtl.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap-reboot.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap-reboot.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap-reboot.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap-reboot.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap-reboot.rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap-reboot.rtl.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap-reboot.rtl.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap-reboot.rtl.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap-utilities.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap-utilities.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap-utilities.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap-utilities.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap-utilities.rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap-utilities.rtl.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap-utilities.rtl.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap-utilities.rtl.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap.rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap.rtl.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap.rtl.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/css/bootstrap.rtl.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/delete.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/display.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/edit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/find_by_country.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/js/bootstrap.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/js/bootstrap.bundle.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/js/bootstrap.bundle.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/js/bootstrap.bundle.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/js/bootstrap.esm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/js/bootstrap.esm.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/js/bootstrap.esm.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/js/bootstrap.esm.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/js/bootstrap.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/js/bootstrap.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/sort_by_name.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_12_JDBC &amp; CRUD/thuc_hanh_va_bai_tap/src/main/webapp/user_choice.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bai_tap/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/dml_database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/dml_database.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/create.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/display.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/display.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/UserControllerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UserControllerServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,7 +153,7 @@
       <updated>1640714500886</updated>
       <workItem from="1640714503490" duration="11664000" />
       <workItem from="1640740728911" duration="1275000" />
-      <workItem from="1640742985345" duration="1964000" />
+      <workItem from="1640742985345" duration="3992000" />
     </task>
     <servers />
   </component>
@@ -312,54 +177,58 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1640714571238" />
-    <state width="845" height="64" key="GridCell.Tab.0.bottom" timestamp="1640745122221">
+    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1640750607673">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="845" height="64" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640745122221" />
-    <state width="845" height="64" key="GridCell.Tab.0.center" timestamp="1640745122221">
+    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1640750607673" />
+    <state width="845" height="157" key="GridCell.Tab.0.bottom" timestamp="1640750625575">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="845" height="64" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1640745122221" />
-    <state width="845" height="64" key="GridCell.Tab.0.left" timestamp="1640745122221">
+    <state width="845" height="157" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640750625575" />
+    <state width="845" height="157" key="GridCell.Tab.0.center" timestamp="1640750625575">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="845" height="64" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1640745122221" />
-    <state width="845" height="64" key="GridCell.Tab.0.right" timestamp="1640745122221">
+    <state width="845" height="157" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1640750625575" />
+    <state width="845" height="157" key="GridCell.Tab.0.left" timestamp="1640750625575">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="845" height="64" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1640745122221" />
-    <state width="845" height="64" key="GridCell.Tab.1.bottom" timestamp="1640745122222">
+    <state width="845" height="157" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1640750625575" />
+    <state width="845" height="157" key="GridCell.Tab.0.right" timestamp="1640750625575">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="845" height="64" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640745122222" />
-    <state width="845" height="64" key="GridCell.Tab.1.center" timestamp="1640745122222">
+    <state width="845" height="157" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1640750625575" />
+    <state width="845" height="157" key="GridCell.Tab.1.bottom" timestamp="1640750625575">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="845" height="64" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1640745122222" />
-    <state width="845" height="64" key="GridCell.Tab.1.left" timestamp="1640745122221">
+    <state width="845" height="157" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640750625575" />
+    <state width="845" height="157" key="GridCell.Tab.1.center" timestamp="1640750625575">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="845" height="64" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1640745122221" />
-    <state width="845" height="64" key="GridCell.Tab.1.right" timestamp="1640745122222">
+    <state width="845" height="157" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1640750625575" />
+    <state width="845" height="157" key="GridCell.Tab.1.left" timestamp="1640750625575">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="845" height="64" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1640745122222" />
-    <state width="845" height="64" key="GridCell.Tab.2.bottom" timestamp="1640745122222">
+    <state width="845" height="157" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1640750625575" />
+    <state width="845" height="157" key="GridCell.Tab.1.right" timestamp="1640750625575">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="845" height="64" key="GridCell.Tab.2.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640745122222" />
-    <state width="845" height="64" key="GridCell.Tab.2.center" timestamp="1640745122222">
+    <state width="845" height="157" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1640750625575" />
+    <state width="845" height="157" key="GridCell.Tab.2.bottom" timestamp="1640750625575">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="845" height="64" key="GridCell.Tab.2.center/0.0.1280.680@0.0.1280.680" timestamp="1640745122222" />
-    <state width="845" height="64" key="GridCell.Tab.2.left" timestamp="1640745122222">
+    <state width="845" height="157" key="GridCell.Tab.2.bottom/0.0.1280.680@0.0.1280.680" timestamp="1640750625575" />
+    <state width="845" height="157" key="GridCell.Tab.2.center" timestamp="1640750625575">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="845" height="64" key="GridCell.Tab.2.left/0.0.1280.680@0.0.1280.680" timestamp="1640745122222" />
-    <state width="845" height="64" key="GridCell.Tab.2.right" timestamp="1640745122222">
+    <state width="845" height="157" key="GridCell.Tab.2.center/0.0.1280.680@0.0.1280.680" timestamp="1640750625575" />
+    <state width="845" height="157" key="GridCell.Tab.2.left" timestamp="1640750625575">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="845" height="64" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1640745122222" />
+    <state width="845" height="157" key="GridCell.Tab.2.left/0.0.1280.680@0.0.1280.680" timestamp="1640750625575" />
+    <state width="845" height="157" key="GridCell.Tab.2.right" timestamp="1640750625575">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="845" height="157" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1640750625575" />
     <state width="845" height="2" key="GridCell.Tab.3.bottom" timestamp="1640725529544">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -376,5 +245,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="845" height="2" key="GridCell.Tab.3.right/0.0.1280.680@0.0.1280.680" timestamp="1640725529544" />
+    <state x="91" y="0" key="new project wizard" timestamp="1640750623396">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="91" y="0" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1640750623396" />
   </component>
 </project>
