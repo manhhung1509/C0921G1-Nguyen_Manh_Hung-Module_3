@@ -1,9 +1,14 @@
 package service.vailidate;
 
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.format.ResolverStyle;
+import java.util.concurrent.TimeUnit;
 
 public class ValidateService {
     public static final String REGEX_PHONE = "^(0|\\(84\\)\\+)(90|91)\\d{7}$";
@@ -116,6 +121,36 @@ public class ValidateService {
 //        boolean flag = true;
 //        if (kiTu.matches("[`!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?~]")){
 //            flag=false;
+//        }
+//        return flag;
+//    }
+
+    public static Boolean checkCompareBirthday() {
+            Date date1 = Date.valueOf("1991-10-10");
+            Date date2 = Date.valueOf("1991-10-10");
+            LocalDate localDate1 = date1.toLocalDate();
+            LocalDate localDate2 = date2.toLocalDate();
+           return !Period.between(localDate1,localDate2).isNegative();
+    }
+
+
+//    public static Boolean checkNgay(String ngayNhapVien, String ngayRaVien) {
+//        boolean flag;
+//        java.util.Date nhapVien = null;
+//        java.util.Date raVien = null;
+//
+//        try {
+//            nhapVien = new SimpleDateFormat("yyyy-MM-dd").parse(ngayNhapVien);
+//            raVien = new SimpleDateFormat("yyyy-MM-dd").parse(ngayRaVien);
+//        } catch (ParseException e) {
+//            flag=false;
+//        }
+//        if (nhapVien.compareTo(raVien) > 0) {
+//            flag = false;
+//        } else if (nhapVien.compareTo(raVien) < 0) {
+//            flag = true;
+//        } else {
+//            flag = true;
 //        }
 //        return flag;
 //    }

@@ -4,6 +4,7 @@ import bean.Customer;
 import bean.CustomerType;
 import service.CustomerService;
 import service.service_impl.CustomerServiceIMPL;
+import service.vailidate.ValidateService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,7 +17,6 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 @WebServlet(name = "CustomerServlet", urlPatterns = "/customerServlet")
 public class CustomerServlet extends HttpServlet {
@@ -148,6 +148,9 @@ public class CustomerServlet extends HttpServlet {
         Customer customer = new Customer(new CustomerType(customerTypeId),name,birthday,gender, idCard, phone,email,address );
         List<CustomerType> customerTypeList = customerService.selectCustomerType();
         Map<String,String> massageMap = customerService.CreateCustomer(customer);
+//        if (!ValidateService.checkCompareBirthday()){
+//            massageMap.put("rBirthday", "ngày trước phải lớn hơn ngày sau");
+//        }
         if (!massageMap.isEmpty()){
             request.setAttribute("msgName", massageMap.get("rName"));
             request.setAttribute("msgGender", massageMap.get("rGender"));

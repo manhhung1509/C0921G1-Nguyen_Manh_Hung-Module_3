@@ -64,6 +64,8 @@ public class CustomerServiceIMPL implements CustomerService {
         }
         if (customer.getCustomerBirthday() == null){
             massageMap.put("rBirthday", "Vui lòng chọn ngày sinh");
+        }else if (!ValidateService.checkCompareBirthday()){
+            massageMap.put("rBirthday", "ngày trước phải lớn hơn ngày sau");
         }
 
 
